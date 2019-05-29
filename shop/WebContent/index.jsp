@@ -38,9 +38,9 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#menu1">New</a>
     </li>
-    <!--  
+      <!--
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#menu2">Notebook</a>
+      <a class="nav-link" data-toggle="tab" href="#menu2">	สินค้า	</a>
     </li>
     -->
   </ul>
@@ -214,8 +214,11 @@
       </p>
     </div>
     <div id="menu2" class="container tab-pane fade"><br>
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <h3>	สินค้า	</h3>
+      <p>
+      	<input type="submit" value="Submit" class="btn btn-outline-success"">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+      </p>
     </div>
   </div>
 </div>
