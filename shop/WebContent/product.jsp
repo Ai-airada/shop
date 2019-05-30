@@ -39,18 +39,16 @@ $(function() {
 			body:"<center><img  src=\"${pageContext.request.contextPath}/image/notebook06.jpg\" style=\"width: 50%\"></center> <h2>Notebook HP Omen Gaming 15-dc1027TX (Shadow Black)</h2><p><ul><li>ปุ่มคีย์บอร์ดแบบเรืองแสงมีไฟส่องสว่างเพื่อความสะดวกในการดูในที่มืด</li><li>SSD เพิ่มประสิทธิภาพในการทำงานได้เร็วขึ้นและถ่ายโอนข้อมูลได้เร็วขึ้น</il><li>Bang and Olufsen audio technology ให้เสียงที่คมชัดและตรงไปตรงมามากขึ้น</li> <h4 style=\"color: blue;\">55,900 บาท  </h4><div class=\"form-group form-inline \" ><label for=\"num\"> จำนวน  : </label><input name=\"num\" class=\"form-control\" type=\"number\" id=\"num\"><a href=\"#\" class=\"btn btn-success\"> ซื้อ </a></div> </p>"
 		}
 	];
-	var c=0;
 		$("#search").click(function() {
 			$("#pro_id").html("");
 			for (var i = 0; i < data.length; i++) {
 				if(data[i].name.includes( $("#search_id").val() ) ){
 					var content='<div class="card">'+data[i].body+'</div>';
 					$("#pro_id").append(content);
-					c++;
 				}
 			}
 			if($("#pro_id").val()==""){
-				var content='<div class="card"><h2 class=\"alert alert-danger\">'+' ไม่พบผลการค้นหา\" 	'	+ $("#search_id").val() + '\"' +'</h2><h4> กรุณากรอกข้อมูลใหม่อีกครั้ง </h4></div>';
+				var content='<div class="card"><h2 class=\"alert alert-danger\">'+' ไม่พบผลการค้นหา\"	 '	+ $("#search_id").val() + '\"' +'</h2><h4> กรุณากรอกข้อมูลใหม่อีกครั้ง </h4></div>';
 				$("#pro_id").append(content);
 			}
 		});
