@@ -147,7 +147,7 @@ if(session.getAttribute("user") != null){
       </li>  
     </ul>
 	<input id="search_id" class="form-control mr-sm-2" type="text" placeholder="Search" style="width: 20%">
-	<button onclick="searchProduct()" class="btn btn-outline-success">Search</button>
+	<button id="search" class="btn btn-outline-success">Search</button>
       
     
   </div>
