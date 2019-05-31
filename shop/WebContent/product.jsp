@@ -6,13 +6,37 @@
 <meta charset="UTF-8">
 <title>Product</title>
 	<link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.css">
-	<script type="text/javascript" src="bootstrap-4.3.1-dist/js/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap-4.3.1-dist/js/bootstrap.min.js" ></script>
+	
 </head>
 
 <script type="text/javascript">
 
 $(function() {
+	
+	$("#search").click(function() {
+		var c=0;
+		$("#pro_id").empty().hide();
+		$.ajax({
+			type:"POST",
+			url:"search",
+			data:{
+				word:$("#search_id").val()
+			},
+			dataType: 'text',
+			success: function(res) {
+				console.log(res);
+				var data=JSON.parse(res);
+				console.log(data[0].name);
+				$("#pro_id").append(data);
+			},
+			error : function (textStatus , errorThrown) {
+				console.log(textStatus);
+			}
+		});
+		$("#pro_id").fadeIn(500);
+	});
 	
 	var data = [
 		{	name:"notebook Acer Nitro AN515-42-R7EB/T001",
@@ -39,9 +63,12 @@ $(function() {
 			body:"<center><img  src=\"${pageContext.request.contextPath}/image/notebook06.jpg\" style=\"width: 50%\"></center> <h2>Notebook HP Omen Gaming 15-dc1027TX (Shadow Black)</h2><p><ul><li>ปุ่มคีย์บอร์ดแบบเรืองแสงมีไฟส่องสว่างเพื่อความสะดวกในการดูในที่มืด</li><li>SSD เพิ่มประสิทธิภาพในการทำงานได้เร็วขึ้นและถ่ายโอนข้อมูลได้เร็วขึ้น</il><li>Bang and Olufsen audio technology ให้เสียงที่คมชัดและตรงไปตรงมามากขึ้น</li> <h4 style=\"color: blue;\">55,900 บาท  </h4><div class=\"form-group form-inline \" ><label for=\"num\"> จำนวน  : </label><input name=\"num\" class=\"form-control\" type=\"number\" id=\"num\"><a href=\"#\" class=\"btn btn-success\"> ซื้อ </a></div> </p>"
 		}
 	];
+	/*
 		$("#search").click(function() {
+			var c=0;
 			$("#pro_id").html("");
 			for (var i = 0; i < data.length; i++) {
+				c++;
 				if(data[i].name.includes( $("#search_id").val() ) ){
 					var content='<div class="card">'+data[i].body+'</div>';
 					$("#pro_id").append(content);
@@ -52,7 +79,7 @@ $(function() {
 				$("#pro_id").append(content);
 			}
 		});
-		
+		*/
 	});	
 
 /*	function searchProduct() {
@@ -107,7 +134,7 @@ $(function() {
 		<div class="col-sm-12" style=" margin-top :20px ;margin-bottom: 20px ; ">
 			<div class="form-row" >
 				<div class="form-group col-sm-12" id="pro_id">
-				
+				sasdhf
 				</div>
 				
 			</div>
